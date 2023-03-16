@@ -2,7 +2,7 @@
 
 /**
  * main - function starts here
- * 
+ *
  * Description: puts function send a string to the standard output
  *
  * Return: Return(0) stops the compiler
