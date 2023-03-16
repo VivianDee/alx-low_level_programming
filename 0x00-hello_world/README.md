@@ -1,1 +1,1 @@
-The basics of the programming language C
+The basics of C programming
