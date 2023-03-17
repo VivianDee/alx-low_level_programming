@@ -11,6 +11,7 @@
 int main(void)
 {
 	int c;
+
 	c = 97;
 
 	while (c != 123)
