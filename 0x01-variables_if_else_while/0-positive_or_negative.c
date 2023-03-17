@@ -5,9 +5,7 @@
 /**
  * main - Entry point
  *
- * @n is given a random value
- *
- * Description: An IF statement checks if the value of n is positive, negative or zero and prints out n and a string
+ * Description: An IF statement checks if the value of n is +,- OR 0
  * Return: Always 0 (Success)
  */
 int main(void)
