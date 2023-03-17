@@ -8,7 +8,7 @@
  * @n is given a random value
  *
  * Description: An IF statement checks if the value of n is positive, negative
- * or zero and prints out n and a string.
+ or zero and prints out n and a string.
  *
  * Return: Always 0 (Success) 
  */
