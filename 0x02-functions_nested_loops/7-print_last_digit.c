@@ -4,7 +4,7 @@
  *print_last_digit - A function that prints the last digit of a number.
  * @r: A number
  *
- * Return: count
+ * Return: lastdig 
  */
 
 int print_last_digit(int r)
@@ -17,7 +17,7 @@ int print_last_digit(int r)
 	} else if (r == 0)
 	{
 		lastdig = r;
-	} else
+	} else if (r < 0 && r != -2147483648)
 	{
 		while (r < 0)
 		{
@@ -25,6 +25,9 @@ int print_last_digit(int r)
 			num++;
 		}
 		lastdig = num % 10;
+	} else if (r == -2147483648)
+	{
+		lastdig = 8;
 	}
 	return (_putchar(lastdig + '0'), lastdig);
 }
