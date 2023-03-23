@@ -9,21 +9,30 @@ void print_triangle(int size)
 {
 	int i;
 
-	for (i = 0; i <= n; i++)
+	if (size > 0)
 	{
-		int space = n - i;
-		int hash = i;
+		for (i = 0; i <= size; i++)
+		{
+			int space = size - i;
+			int hash = i;
 
-		while (space > 0 && hash >= 1)
-		{
-			_putchar(' ');
-			space--;
+			while (space > 0 && hash >= 1)
+			{
+				_putchar(' ');
+				space--;
+			}
+			if (hash > 0)
+			{
+				while (hash > 0)
+				{
+					_putchar('#');
+					hash--;
+				}
+				_putchar('\n');
+			}
 		}
-		while (hash > 0)
-		{
-			_putchar('#');
-			hash--;
-		}
+	} else if (size <= 0)
+	{
 		_putchar('\n');
 	}
 }
