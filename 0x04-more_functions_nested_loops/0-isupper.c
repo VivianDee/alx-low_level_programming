@@ -15,7 +15,7 @@ int _isupper(int c)
 
 	else if (c >= 97 && c <= 122)
 	{
-		_putchar(1 + '0');
+		return (1);
 	}
 
 	return (0);
