@@ -1,4 +1,11 @@
+#ifdef main_h
+
+#undef main_h
+
+#endif
+
 #ifndef main_h
+
 #define main_h
 
 /**
@@ -18,5 +25,14 @@ void print_diagonal(int n);
 void print_square(int size);
 void print_triangle(int size);
 void print_number(int n);
+
+#endif
+
+#ifndef _putchar
+#define _putchar\
+int _putchar(char c)\
+{\
+	return (write(1, &c, 1));\
+}
 
 #endif

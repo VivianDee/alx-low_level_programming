@@ -3,6 +3,7 @@
 /**
  * print_diagonal - A function that draws a diagonal line in the terminal,
  *followed by a new line.
+ * @n: A number
  *
  * Return: void
  */
