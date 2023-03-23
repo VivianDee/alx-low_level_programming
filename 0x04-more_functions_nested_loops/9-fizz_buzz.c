@@ -24,13 +24,16 @@ int main(void)
 		{
 			putchar('F'), putchar('i'), putchar('z'), putchar('z');
 			putchar(' ');
-		} else if (i % 5 == 0)
+		} else if (i % 5 == 0 && i != 100)
 		{
 			putchar('B'), putchar('u'), putchar('z'), putchar('z');
 			putchar(' ');
 		} else if (i < 10)
 		{
 			putchar(i + '0'), putchar(' ');
+		} else if (i == 100)
+		{
+			putchar('B'), putchar('u'), putchar('z'), putchar('z');
 		} else
 		{
 			putchar(i / 10 + '0');
