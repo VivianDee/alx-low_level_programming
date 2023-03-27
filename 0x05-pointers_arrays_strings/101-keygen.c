@@ -1,14 +1,13 @@
 #include "main.h"
 
 /**
- * _atoi - A function that convert a string to an integer.
- * @s: A string
+ * main - Entry point
  *
- * Return: sign * result
+ * Return: 0 (Success)
  */
-
-int _atoi(char *s)
+int main(void)
 {
+	char s[] = "400";
 	int result = 0;
 	int sign = 1;
 	int i = 0;
@@ -28,5 +27,5 @@ int _atoi(char *s)
 		i++;
 	}
 
-	return (sign * result);
+	return (0);
 }
