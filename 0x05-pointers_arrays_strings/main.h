@@ -1,9 +1,3 @@
-#ifdef main_h
-
-#undef main_h
-
-#endif
-
 #ifndef main_h
 
 #define main_h
@@ -25,14 +19,5 @@ void puts_half(char *str);
 void print_array(int *a, int n);
 char *_strcpy(char *dest, char *src);
 int _atoi(char *s);
-
-#endif
-
-#ifndef _putchar
-#define _putchar\
-int _putchar(char c)\
-{\
-	return (write(1, &c, 1));\
-}
 
 #endif
