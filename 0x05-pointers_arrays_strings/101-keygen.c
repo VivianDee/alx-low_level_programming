@@ -10,10 +10,19 @@
  */
 int main() 
 {
-	int pass;
+	int i;
+	char pass[13];
+	char valid_chars[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 	srand(time(0));
-	pass = rand();
+	for (i = 0; i < 13; i++)
+	{
+		pass[i] = valid_chars[rand() % 62];
+	}
 
-	return (pass);
+	pass[13] = '\0';
+
+	printf("%s\n", pass);
+
+	return (0);
 }
