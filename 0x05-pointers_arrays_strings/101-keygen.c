@@ -5,27 +5,12 @@
  *
  * Return: 0 (Success)
  */
-int main(void)
+int main() 
 {
-	char s[] = "400";
-	int result = 0;
-	int sign = 1;
-	int i = 0;
+	int pass;
 
-	while (s[i] < '0' || s[i] > '9')
-	{
-		if (s[i] == '-')
-		{
-			sign *= -1;
-		}
-		i++;
-	}
+	srand(time(0));
+	pass = rand();
 
-	while (s[i] >= '0' && s[i] <= '9')
-	{
-		result = result * 10 + (s[i] - '0');
-		i++;
-	}
-
-	return (0);
+	return (pass);
 }
