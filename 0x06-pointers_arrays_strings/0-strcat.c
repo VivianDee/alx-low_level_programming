@@ -21,13 +21,14 @@ char *_strcat(char *dest, char *src)
 		len2++;
 		l++;
 	}
-	while (*(src + m) != '\0')
+	while (*(src + m) != '\0' && (j < (len + len2)))
 	{
 		*(dest + len2) = *(src + j);
 		m++;
 		j++;
 		len2++;
 	}
+
 	len2 = len2 + len + 1;
 	*(dest + len2) = '\0';
 
