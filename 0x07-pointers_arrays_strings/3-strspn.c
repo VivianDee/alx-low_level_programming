@@ -20,7 +20,7 @@ unsigned int _strspn(char *s, char *accept)
 		j++;
 	}
 	for (len1 = 0; len1 < i; len1++)
-	{ 
+	{
 		if (check == 0)
 		{
 			check = 1;
@@ -36,5 +36,5 @@ unsigned int _strspn(char *s, char *accept)
 			return (len1 - 1);
 		}
 	}
-	return(0);
+	return (0);
 }

@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strbrk - A function that searches a string for any of a set of bytes.
+ * _strpbrk - A function that searches a string for any of a set of bytes.
  * @s: A Pointer to a String
  * @accept: A Pointer to a String to be compared with string 1
  *
@@ -21,7 +21,7 @@ char *_strpbrk(char *s, char *accept)
 		j++;
 	}
 	for (len1 = 0; len1 < i; len1++)
-	{ 
+	{
 		for (len2 = 0; len2 < j; len2++)
 		{
 			if (*(s + len1) == *(accept + len2))

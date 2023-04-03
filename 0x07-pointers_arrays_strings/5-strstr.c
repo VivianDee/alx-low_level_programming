@@ -5,7 +5,7 @@
  * @haystack: A Pointer to a String 1
  * @needle: A Pointer to a String to be compared with string 1
  *
- * Return: Pointer p 
+ * Return: Pointer p
  */
 char *_strstr(char *haystack, char *needle)
 {
@@ -23,7 +23,7 @@ char *_strstr(char *haystack, char *needle)
 			if (*(haystack + i) == *(needle + len2))
 			{
 				characterNum++;
-			} 
+			}
 			if (*(haystack + i) == ' ')
 			{
 				characterNum = 0;
