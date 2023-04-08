@@ -40,6 +40,11 @@ int main(int argc, char *argv[])
 			count += x / 5;
 			x = x % 5;
 		}
+		if (x / 2)
+		{
+			count += x / 2;
+			 x = x % 2;
+		}
 		if (x / 1 > 0)
 		{
 			count += x / 1;
