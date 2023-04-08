@@ -18,12 +18,7 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 		return (1);
-	}
-	if (x < 0)
-	{
-		printf("0\n");
-	}
-	if (x > 0)
+	} else if (x > 0)
 	{
 		if (x / 25 > 0)
 		{
@@ -50,7 +45,6 @@ int main(int argc, char *argv[])
 			count += x / 1;
 			x = x % 1;
 		}
-
 	}
 	printf("%d\n", count);
 	return (0);
