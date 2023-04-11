@@ -11,25 +11,30 @@
  * - A two dimensional array
  * - NULL (failure)
  */
-
 int **alloc_grid(int width, int height)
 {
-	int **grid = (int **)malloc(width * sizeof(int));
-	int i;
+	int i, j;
+	int **grid = malloc(height * sizeof(int *));
 
 	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
 	}
+	if (grid == NULL)
+		return (NULL);
 
-		if (grid == NULL)
-			return (NULL);
-		for (i = 0; i < height; ++i)
+	for (i = 0; i < height; i++)
+	{
+		grid[i] = malloc(width * sizeof(int));
+		if (grid[i] == NULL)
 		{
-			grid[i] = (int *)malloc(height * sizeof(int));
-			if (grid[i] == NULL)
-				return (NULL);
+			for (j = 0; j < i; j++)
+			{
+				free(grid[j]);
+			}
+			free(grid);
+			return (NULL);
 		}
-		return (grid);
-	return (NULL);
+	}
+	return (grid);
 }
