@@ -9,15 +9,15 @@
  *
  * Return: concated array(success) or NULL
  */
- char *argstostr(int ac, char **av)
+char *argstostr(int ac, char **av)
 {
 	char *p;
 	int len = 0, i, j = 0;
 
-	if (ac ==0 || av == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for(i = 0; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		while (av[i][j] != '\0')
 		{
@@ -26,11 +26,11 @@
 		}
 	}
 
-	p = (char *)malloc((ac + len) * sizeof(char));
+	p = (char *)malloc((ac + len - 2) * sizeof(char));
 	if (p == NULL)
-		return(NULL);
+		return (NULL);
 
-	for(i = 0; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		strcat(p, av[i]);
 		strcat(p, "\n");
