@@ -17,7 +17,7 @@
 	if (ac ==0 || av == NULL)
 		return (NULL);
 
-	for(i = 1; i < ac; i++)
+	for(i = 0; i < ac; i++)
 	{
 		while (av[i][j] != '\0')
 		{
@@ -30,7 +30,7 @@
 	if (p == NULL)
 		return(NULL);
 
-	for(i = 1; i < ac; i++)
+	for(i = 0; i < ac; i++)
 	{
 		strcat(p, av[i]);
 		strcat(p, "\n");
