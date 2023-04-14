@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * argstostr - A function that concatenates all the arguments of your program.
@@ -8,34 +9,31 @@
  *
  * Return: concated array(success) or NULL
  */
-
-char *argstostr(int ac, char **av)
+ char *argstostr(int ac, char **av)
 {
+	char *p;
+	int len = 0, i, j = 0;
 
-	int total_len = 0;
+	if (ac ==0 || av == NULL)
+		return (NULL);
 
-	if (ac == 0 || av == NULL)
+	for(i = 1; i < ac; i++)
 	{
-		return NULL;
-	}
-	for (int i = 0; i < ac; i++)
-	{
-		total_len += strlen(av[i]) + 1;
-	}
-	char *str = malloc(sizeof(char) * total_len);
-	if (str == NULL)
-	{
-		return NULL;
-	}
-	int pos = 0;
-	for (int i = 0; i < ac; i++)
-	{
-		int len = strlen(av[i]);
-		strncpy(str + pos, av[i], len);
-		pos += len;
-		str[pos++] = '\n';
+		while (av[i][j] != '\0')
+		{
+			len++;
+			j++;
+		}
 	}
 
-	str[pos] = '\0';
-	return str;
+	p = (char *)malloc((ac + len) * sizeof(char));
+	if (p == NULL)
+		return(NULL);
+
+	for(i = 1; i < ac; i++)
+	{
+		strcat(p, av[i]);
+		strcat(p, "\n");
+	}
+	return (p);
 }
