@@ -21,7 +21,7 @@ char **strtow(char *str)
 			word++;
 	}
 	p = (char **)malloc((word + 1) * sizeof(char *));
-	if (p == NULL)
+	if (p == NULL || str == NULL || len == 0 || word == 0)
 		return (NULL);
 	p[word] = NULL;
 	for (i = 0; i < strlen(str); i++)
