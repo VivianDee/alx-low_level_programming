@@ -51,8 +51,7 @@ void print_all(const char *const format, ...)
 
 	if (format == NULL)
 	{
-		printf("(nil)");
-		return;
+		exit(98);
 	}
 	n = strlen(format);
 	va_start(string, format);
