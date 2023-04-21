@@ -10,7 +10,6 @@
 */
 void print_number(int n)
 {
-	if (n)
 		printf("%d", n);
 }
 
@@ -20,9 +19,7 @@ void print_number(int n)
 */
 void print_string(char *s)
 {
-	if (s == NULL)
-		printf("(nil)");
-	printf("%s", s);
+		printf("%s", s);
 }
 
 /**
@@ -31,7 +28,6 @@ void print_string(char *s)
 */
 void print_char(int c)
 {
-	if (c)
 		putchar(c);
 }
 
@@ -41,7 +37,6 @@ void print_char(int c)
 */
 void print_float(double n)
 {
-	if (n)
 		printf("%f", n);
 }
 
@@ -67,15 +62,18 @@ void print_all(const char *const format, ...)
 		{
 			print_char(va_arg(string, int));
 			check++;
-		} else if (format[i] == 's')
+		}
+		else if (format[i] == 's')
 		{
 			print_string(va_arg(string, char *));
 			check++;
-		} else if (format[i] == 'f')
+		}
+		else if (format[i] == 'f')
 		{
 			print_float(va_arg(string, double));
 			check++;
-		} else if (format[i] == 'i')
+		}
+		else if (format[i] == 'i')
 		{
 			print_number(va_arg(string, int));
 			check++;
