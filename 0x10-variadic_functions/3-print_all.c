@@ -20,10 +20,9 @@ void print_number(int n)
 */
 void print_string(char *s)
 {
-	if (s)
-		printf("%s", s);
-	else if (s == NULL)
+	if (s == NULL)
 		printf("(nil)");
+	printf("%s", s);
 }
 
 /**
