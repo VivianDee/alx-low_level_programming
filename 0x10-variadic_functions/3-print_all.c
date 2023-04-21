@@ -4,16 +4,15 @@
 #include <stdlib.h>
 #include "variadic_functions.h"
 
-
 /**
 * print_number - Prints out a number
 * @n: A number
 */
 void print_number(int n)
 {
-	printf("%d", n);
+	if (n)
+		printf("%d", n);
 }
-
 
 /**
 * print_string - Prints out a string
@@ -21,9 +20,11 @@ void print_number(int n)
 */
 void print_string(char *s)
 {
-	printf("%s", s);
+	if (s)
+		printf("%s", s);
+	else if (s == NULL)
+		printf("(nil)");
 }
-
 
 /**
 * print_char - Prints out a character
@@ -31,9 +32,9 @@ void print_string(char *s)
 */
 void print_char(int c)
 {
-	putchar(c);
+	if (c)
+		putchar(c);
 }
-
 
 /**
 * print_float - Prints out a float
@@ -41,9 +42,9 @@ void print_char(int c)
 */
 void print_float(double n)
 {
-	printf("%f", n);
+	if (n)
+		printf("%f", n);
 }
-
 
 /**
 * print_all - A function that prints integers, characters, strings or floats
@@ -56,7 +57,6 @@ void print_all(const char *const format, ...)
 
 	if (format == NULL)
 	{
-		printf("(nil)");
 		return;
 	}
 	n = strlen(format);
