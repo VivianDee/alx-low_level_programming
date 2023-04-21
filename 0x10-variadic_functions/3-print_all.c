@@ -51,6 +51,7 @@ void print_all(const char *const format, ...)
 
 	if (format == NULL)
 	{
+		printf("(nil)");
 		return;
 	}
 	n = strlen(format);
@@ -62,18 +63,15 @@ void print_all(const char *const format, ...)
 		{
 			print_char(va_arg(string, int));
 			check++;
-		}
-		else if (format[i] == 's')
+		} else if (format[i] == 's')
 		{
 			print_string(va_arg(string, char *));
 			check++;
-		}
-		else if (format[i] == 'f')
+		} else if (format[i] == 'f')
 		{
 			print_float(va_arg(string, double));
 			check++;
-		}
-		else if (format[i] == 'i')
+		} else if (format[i] == 'i')
 		{
 			print_number(va_arg(string, int));
 			check++;
