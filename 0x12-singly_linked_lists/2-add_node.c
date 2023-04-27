@@ -2,8 +2,8 @@
 
 /**
  * add_node - A function that adds a node to a singly linked list
- * head: head of the linked list
- * str: A string to be added to the linked list
+ * @head: head of the linked list
+ * @str: A string to be added to the linked list
  *
  * Return: New list address
  */

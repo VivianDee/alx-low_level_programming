@@ -1,7 +1,8 @@
 #include "lists.h"
 
 /**
- * list_len: A function that returns the length of a singly linked list
+ * list_len - A function that returns the length
+ *of a singly linked list
  * @h: singly linked list
  *
  * Return: Length of the linked list
