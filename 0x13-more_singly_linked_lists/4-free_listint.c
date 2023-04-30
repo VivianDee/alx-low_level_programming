@@ -3,7 +3,6 @@
 /**
  * free_list - Frees a singly linked list
  * @head: A pointer to the first node on the list
- * 
  */
 
 void free_list(listint_t *head)
