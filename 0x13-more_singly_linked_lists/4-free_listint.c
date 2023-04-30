@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * free_list - Frees a singly linked list
+ * free_listint - Frees a singly linked list
  * @head: A pointer to the first node on the list
  */
 
-void free_list(listint_t *head)
+void free_listint(listint_t *head)
 {
 	listint_t *current = head;
 	listint_t *next = NULL;
