@@ -18,10 +18,10 @@ listint_t *reverse_listint(listint_t **head)
 
 	while (len > 0)
 	{
-		 n = (*head)->n;
-		 delete_nodeint_at_index(head, 0);
-		 insert_nodeint_at_index(head, len - 1, n);
-		 len--;
+		n = (*head)->n;
+		delete_nodeint_at_index(head, 0);
+		insert_nodeint_at_index(head, len - 1, n);
+		len--;
 	}
 	return (*head);
 }
@@ -49,7 +49,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	node->n = n;
 
-	while(first != NULL &&  current_idx != idx - 1)
+	while (first != NULL &&  current_idx != idx - 1)
 	{
 		current_idx++;
 		first = first->next;
@@ -59,7 +59,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	{
 		node->next = *head;
 		*head = node;
-	} else {
+	} else
+	{
 		node->next = first->next;
 		first->next = node;
 	}
