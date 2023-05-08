@@ -4,7 +4,7 @@
  * @filename: The name of the file
  * @text_content: The content tot be added to the file
  *
- * Return 1 (Success) or -1 (Failure)
+ * Return: 1 (Success) or -1 (Failure)
  */
 
 int append_text_to_file(const char *filename, char *text_content)
@@ -20,7 +20,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 
 	if (text_content == NULL)
-		return(-1);
+		return (-1);
 	bytes_written = write(fp, text_content, strlen(text_content));
 	if (bytes_written < 0)
 	{
