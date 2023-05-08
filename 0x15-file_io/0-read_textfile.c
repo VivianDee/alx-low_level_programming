@@ -1,10 +1,18 @@
 #include "main.h"
 
+/**
+ * read_textfile - A function that reads a text file and prints it to stdout
+ * @filename: Name of the file
+ * @letters: Number of characters to read
+ *
+ * Return: Number of read and written characters
+ */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fp;
 	char *data = NULL;
-	ssize_t bytes_read = 0, bytes_written = 0;;
+	ssize_t bytes_read = 0, bytes_written = 0;
 
 	if (filename == NULL)
 		return (0);
