@@ -67,19 +67,19 @@ void print_elf_header(const Elf64_Ehdr *header)
 	int i;
 
 	printf("ELF Header:\n");
-	printf("  Magic:   ");
+	printf("Magic: ");
 	for (i = 0; i < EI_NIDENT; i++)
 	{
 		printf("%02x ", header->e_ident[i]);
 	}
 	printf("\n");
-	printf("  Class:                             %s\n", header->e_ident[EI_CLASS] == ELFCLASS32 ? "ELF32" : "ELF64");
-	printf("  Data:                              %s\n", header->e_ident[EI_DATA] == ELFDATA2MSB ? "2's complement, big endian" : "2's complement, little endian");
-	printf("  Version:                           %d%s\n", header->e_ident[EI_VERSION], header->e_ident[EI_VERSION] == EV_CURRENT ? " (current)" : "");
-	printf("  OS/ABI:                            %s\n", get_osabi_name(header->e_ident[EI_OSABI]));
-	printf("  ABI Version:                       %d\n", header->e_ident[EI_ABIVERSION]);
-	printf("  Type:                              EXEC (Executable file)\n");
-	printf("  Entry point address:               %#lx\n", header->e_entry);
+	printf("Class: %s\n", header->e_ident[EI_CLASS] == ELFCLASS32 ? "ELF32" : "ELF64");
+	printf("Data: %s\n", header->e_ident[EI_DATA] == ELFDATA2MSB ? "2's complement, big endian" : "2's complement, little endian");
+	printf("Version: %d%s\n", header->e_ident[EI_VERSION], header->e_ident[EI_VERSION] == EV_CURRENT ? " (current)" : "");
+	printf("OS/ABI: %s\n", get_osabi_name(header->e_ident[EI_OSABI]));
+	printf("ABI Version: %d\n", header->e_ident[EI_ABIVERSION]);
+	printf("Type: EXEC (Executable file)\n");
+	printf("Entry point address: %#lx\n", header->e_entry);
 }
 
 
@@ -87,7 +87,7 @@ void print_elf_header(const Elf64_Ehdr *header)
   * main - Entry point
   *
   * @argc: The number of command-line arguments.
-  * @argv: An array of strings containing the command-line arguments.
+  * @argv: An array of command-line arguments.
   *
   * Return: 0 on success, or a non-zero value on failure.
   */
