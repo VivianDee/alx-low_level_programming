@@ -25,7 +25,7 @@ int copy_text_to_file(const char *filefrom, const char *fileto)
 		exit(98);
 	}
 
-	cp = open(fileto, O_WRONLY | O_CREAT | O_TRUNC, 664);
+	cp = open(fileto, O_WRONLY | O_CREAT | O_TRUNC | O_EXCL, 0664);
 	if (cp == -1)
 	{
 		close(fp);
