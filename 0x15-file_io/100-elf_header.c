@@ -32,29 +32,29 @@ const char *get_osabi_name(uint8_t osabi)
 	switch (osabi)
 	{
 		case ELFOSABI_SYSV:
-			return "UNIX - System V";
+			return ("UNIX - System V");
 		case ELFOSABI_HPUX:
-			return "UNIX - HP-UX";
+			return ("UNIX - HP-UX");
 		case ELFOSABI_NETBSD:
-			return "UNIX - NetBSD";
+			return ("UNIX - NetBSD");
 		case ELFOSABI_LINUX:
-			return "UNIX - Linux";
+			return ("UNIX - Linux");
 		case ELFOSABI_SOLARIS:
-			return "UNIX - Solaris";
+			return ("UNIX - Solaris");
 		case ELFOSABI_AIX:
-			return "UNIX - AIX";
+			return ("UNIX - AIX");
 		case ELFOSABI_IRIX:
-			return "UNIX - IRIX";
+			return ("UNIX - IRIX");
 		case ELFOSABI_FREEBSD:
-			return "UNIX - FreeBSD";
+			return ("UNIX - FreeBSD");
 		case ELFOSABI_TRU64:
-			return "UNIX - TRU64";
+			return ("UNIX - TRU64");
 		case ELFOSABI_MODESTO:
-			return "Novell - Modesto";
+			return ("Novell - Modesto");
 		case ELFOSABI_OPENBSD:
-			return "UNIX - OpenBSD";
+			return ("UNIX - OpenBSD");
 		default:
-			return "Unknown";
+			return ("Unknown");
 	}
 }
 /**
@@ -76,7 +76,7 @@ void print_elf_header(const Elf64_Ehdr *header)
 	printf("  Class:                             %s\n", header->e_ident[EI_CLASS] == ELFCLASS32 ? "ELF32" : "ELF64");
 	printf("  Data:                              %s\n", header->e_ident[EI_DATA] == ELFDATA2MSB ? "2's complement, big endian" : "2's complement, little endian");
 	printf("  Version:                           %d%s\n", header->e_ident[EI_VERSION], header->e_ident[EI_VERSION] == EV_CURRENT ? " (current)" : "");
-	printf("  OS/ABI:                            %d\n", get_osabi_name(header->e_ident[EI_OSABI]));
+	printf("  OS/ABI:                            %s\n", get_osabi_name(header->e_ident[EI_OSABI]));
 	printf("  ABI Version:                       %d\n", header->e_ident[EI_ABIVERSION]);
 	printf("  Type:                              EXEC (Executable file)\n");
 	printf("  Entry point address:               %#lx\n", header->e_entry);
@@ -121,5 +121,5 @@ int main(int argc, char *argv[])
 	print_elf_header(&header);
 
 	close(fd);
-	return 0;
+	return (0);
 }
