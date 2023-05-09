@@ -20,6 +20,43 @@ void print_error(const char *message)
 	exit(98);
 }
 
+
+/**
+* get_osabi_name - Get the name of the OS/ABI.
+* @osabi: The OS/ABI identifier.
+*
+* Return: A string containing the name of the OS/ABI.
+*/
+const char *get_osabi_name(uint8_t osabi)
+{
+	switch (osabi)
+	{
+		case ELFOSABI_SYSV:
+			return "UNIX - System V";
+		case ELFOSABI_HPUX:
+			return "UNIX - HP-UX";
+		case ELFOSABI_NETBSD:
+			return "UNIX - NetBSD";
+		case ELFOSABI_LINUX:
+			return "UNIX - Linux";
+		case ELFOSABI_SOLARIS:
+			return "UNIX - Solaris";
+		case ELFOSABI_AIX:
+			return "UNIX - AIX";
+		case ELFOSABI_IRIX:
+			return "UNIX - IRIX";
+		case ELFOSABI_FREEBSD:
+			return "UNIX - FreeBSD";
+		case ELFOSABI_TRU64:
+			return "UNIX - TRU64";
+		case ELFOSABI_MODESTO:
+			return "Novell - Modesto";
+		case ELFOSABI_OPENBSD:
+			return "UNIX - OpenBSD";
+		default:
+			return "Unknown";
+	}
+}
 /**
   * print_elf_header - Print the information contained in an ELF header.
   *
@@ -31,26 +68,18 @@ void print_elf_header(const Elf64_Ehdr *header)
 
 	printf("ELF Header:\n");
 	printf("  Magic:   ");
-	for (i = 0; i < EI_NIDENT; i++) {
+	for (i = 0; i < EI_NIDENT; i++)
+	{
 		printf("%02x ", header->e_ident[i]);
 	}
 	printf("\n");
 	printf("  Class:                             %s\n", header->e_ident[EI_CLASS] == ELFCLASS32 ? "ELF32" : "ELF64");
-	printf("  Data:                              %s\n", header->e_ident[EI_DATA] == ELFDATA2MSB ? "big endian" : "little endian");
+	printf("  Data:                              %s\n", header->e_ident[EI_DATA] == ELFDATA2MSB ? "2's complement, big endian" : "2's complement, little endian");
 	printf("  Version:                           %d%s\n", header->e_ident[EI_VERSION], header->e_ident[EI_VERSION] == EV_CURRENT ? " (current)" : "");
-	printf("  OS/ABI:                            %d\n", header->e_ident[EI_OSABI]);
+	printf("  OS/ABI:                            %d\n", get_osabi_name(header->e_ident[EI_OSABI]));
 	printf("  ABI Version:                       %d\n", header->e_ident[EI_ABIVERSION]);
-	printf("  Type:                              %d\n", header->e_type);
-	printf("  Entry point address:               0x%lx\n", header->e_entry);
-	printf("  Start of program headers:          %ld (bytes into file)\n", header->e_phoff);
-	printf("  Start of section headers:          %ld (bytes into file)\n", header->e_shoff);
-	printf("  Flags:                             0x%x\n", header->e_flags);
-	printf("  Size of this header:               %d (bytes)\n", header->e_ehsize);
-	printf("  Size of program headers:           %d (bytes)\n", header->e_phentsize);
-	printf("  Number of program headers:         %d\n", header->e_phnum);
-	printf("  Size of section headers:           %d (bytes)\n", header->e_shentsize);
-	printf("  Number of section headers:         %d\n", header->e_shnum);
-	printf("  Section header string table index: %d\n", header->e_shstrndx);
+	printf("  Type:                              EXEC (Executable file)\n");
+	printf("  Entry point address:               %#lx\n", header->e_entry);
 }
 
 

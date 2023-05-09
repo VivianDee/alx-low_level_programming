@@ -21,7 +21,7 @@ int copy_text_to_file(const char *filefrom, const char *fileto)
 	fp = open(filefrom, O_RDONLY);
 	if (fp == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", filefrom);
+		dprintf(1, "Error: Can't read from file %s\n", filefrom);
 		exit(98);
 	}
 	cp = open(fileto, O_WRONLY | O_CREAT | O_TRUNC | O_EXCL, 0664);
