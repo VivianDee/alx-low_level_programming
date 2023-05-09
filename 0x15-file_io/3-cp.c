@@ -24,7 +24,6 @@ int copy_text_to_file(const char *filefrom, const char *fileto)
 		dprintf(2, "Error: Can't read from file %s\n", filefrom);
 		exit(98);
 	}
-
 	cp = open(fileto, O_WRONLY | O_CREAT | O_TRUNC | O_EXCL, 0664);
 	if (cp == -1)
 	{
@@ -32,7 +31,6 @@ int copy_text_to_file(const char *filefrom, const char *fileto)
 		dprintf(2, "Error: Can't write to %s\n", fileto);
 		exit(99);
 	}
-
 	while ((read_chars = read(fp, buff, LETTERS)) > 0)
 	{
 		written_chars = write(cp, buff, read_chars);
@@ -44,7 +42,6 @@ int copy_text_to_file(const char *filefrom, const char *fileto)
 			exit(99);
 		}
 	}
-	    
 	if (read_chars == -1)
 	{
 		close(fp);
@@ -52,26 +49,25 @@ int copy_text_to_file(const char *filefrom, const char *fileto)
 		dprintf(2, "Error: Can't read from file %s\n", filefrom);
 		exit(98);
 	}
-
 	if (close(fp) == -1)
 	{
 		dprintf(2, "Error: Can't close fd %d\n", fp);
 		exit(100);
 	}
-
 	if (close(cp) == -1)
 	{
 		dprintf(2, "Error: Can't close fd %d\n", cp);
 		exit(100);
 	}
-
-	return written_chars;
+	return (written_chars);
 }
 
 /**
-  * main - Entry point
+  * main - Entry point for the program
+  * @ac: Number of av arguments
+  * @av: Array of command-line argument strings
   *
-  * Return: Always 0.
+  * Return: Always 0
   */
 int main(int ac, char **av)
 {
@@ -81,5 +77,5 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	copy_text_to_file(av[1], av[2]);
-	return 0;
+	return (0);
 }
