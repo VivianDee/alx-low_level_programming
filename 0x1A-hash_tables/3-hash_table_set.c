@@ -26,8 +26,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			temp->value = strdup(value);
 			if (temp->value == NULL)
 				return (0);
-			return (1);
-		}
+			return (1); }
+		temp = temp->next;
 	}
 	item = (hash_node_t *)malloc(sizeof(hash_node_t));
 	if (!item)
