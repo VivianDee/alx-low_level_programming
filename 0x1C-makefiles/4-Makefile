@@ -1,4 +1,3 @@
-# Variables
 CC=gcc
 SRC=main.c school.c
 OBJ=main.o school.o
@@ -9,12 +8,6 @@ CFLAGS=-Wall -Werror -Wextra -pedantic
 #Rules
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
-main.o: main.c
-	$(CC) $(CFLAGS) -c -o main.o main.c
-
-school.o: school.c
-	$(CC) $(CFLAGS) -c -o school.o school.c
 
 clean:
 	$(RM) *~ $(NAME)
