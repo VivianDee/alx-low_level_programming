@@ -5,7 +5,5 @@ SRC=main.c school.c
 OBJ=main.o school.o
 NAME=school
 
-# Rules
-
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
