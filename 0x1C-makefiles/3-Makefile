@@ -1,21 +1,23 @@
-# Variables
+#Varibles
 CC=gcc
 SRC=main.c school.c
 OBJ=$(SRC:.c=.o)
 NAME=school
+RM=rm -f
+CFLAGS=-Wall -Werror -Wextra -pedantic
 
 #Rules
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	rm -f *~ $(NAME)
+	$(RM) *~ $(NAME)
 
 oclean:
-	rm -f $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean oclean
 
-re: oclean all
+re: fclean all
 
 .PHONY: all clean oclean fclean re
