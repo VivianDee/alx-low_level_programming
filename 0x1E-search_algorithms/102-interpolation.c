@@ -2,12 +2,13 @@
 #include <stdlib.h>
 
 /**
- * Interpolation Search - Searches for a value in a sorted
+ * interpolation_search - Searches for a value in a sorted
  *array of integers using the Interpolation search algorithm
- * @param array Pointer to the sorted integer array.
- * @param size Size of the array.
- * @param value The value to search for.
- * @return Index of the found value or -1 if not found.
+ * @array: Pointer to the sorted integer array.
+ * @size: Size of the array.
+ * @value: The value to search for.
+ *
+ * Return: Index of the found value or -1 if not found.
  */
 
 int interpolation_search(int *array, size_t size, int value)
@@ -19,7 +20,8 @@ int interpolation_search(int *array, size_t size, int value)
 
 	while (pos < (len - 1))
 	{
-		pos = low + (((double)(high - low) / (array[high] - array[low])) * (value - array[low]));
+		pos = low + (((double)(high - low) /
+					(array[high] - array[low])) * (value - array[low]));
 
 		if (pos < len)
 			printf("Value checked array[%d] = [%d]\n", pos, array[pos]);
@@ -27,11 +29,11 @@ int interpolation_search(int *array, size_t size, int value)
 			printf("Value checked array[%d] is out of range\n", pos);
 
 		if (array[pos] == value)
-			return array[pos];
+			return (pos);
 		else if (array[pos] > value)
 			low = pos + 1;
 		else if (array[pos] < value)
-			high = pos -1;
+			high = pos - 1;
 	}
 	return (-1);
 }
